@@ -31,6 +31,7 @@ public class SelfManager_Stand : BaseManager_Stand
 
     private void Awake()
     {
+        //监听更新金币数量
         EventCenter.AddListener<int>(EventDefine.UpdateCoinCount, UpdateCoinCount);
         Init();
     }
@@ -87,8 +88,10 @@ public class SelfManager_Stand : BaseManager_Stand
     {
         m_AudioSource = GetComponent<AudioSource>();
         go_CompareBtns = transform.Find("CompareBtns").gameObject;
+        //与左边比牌
         btn_CompareLeft = go_CompareBtns.transform.Find("btn_CompareLeft").GetComponent<Button>();
         btn_CompareLeft.onClick.AddListener(OnCompareLeftButtonClick);
+        //与右边比牌
         btn_CompareRight = go_CompareBtns.transform.Find("btn_CompareRight").GetComponent<Button>();
         btn_CompareRight.onClick.AddListener(OnCompareRightButtonClick);
 
@@ -102,6 +105,8 @@ public class SelfManager_Stand : BaseManager_Stand
         txt_StakesSum = transform.Find("StakesSum/txt_StakesSum").GetComponent<Text>();
         go_CountDown = transform.Find("CountDown").gameObject;
         txt_CountDown = transform.Find("CountDown/txt_CountDown").GetComponent<Text>();
+
+        //准备按钮
         btn_Ready = transform.Find("btn_Ready").GetComponent<Button>();
         btn_Ready.onClick.AddListener(OnReadyButtonClick);
         txt_GiveUp = transform.Find("txt_GiveUp").gameObject;
@@ -143,6 +148,8 @@ public class SelfManager_Stand : BaseManager_Stand
         go_CompareBtns.SetActive(false);
 
         txt_StakesSum.text = "0";
+
+        //如果用户有登录，则有登录信息
         if(Models.GameModel.userDto!=null)
         {
             img_HeadIcon.sprite = ResourcesManager.GetSprite(Models.GameModel.userDto.IconName);
@@ -154,14 +161,18 @@ public class SelfManager_Stand : BaseManager_Stand
     //与左边玩家比牌按钮点击
     private void OnCompareLeftButtonClick()
     {
+        go_CompareBtns.SetActive(false);
         m_ZjhManager.SelfCompareLeft();
         SetBottomButtonInteractable(false);
+        StakesAfter(m_ZjhManager.Stakes(0), "看看");
     }
     //与右边玩家比牌按钮点击
     private void OnCompareRightButtonClick()
     {
+        go_CompareBtns.SetActive(false);
         m_ZjhManager.SelfCompareRight();
         SetBottomButtonInteractable(false);
+        StakesAfter(m_ZjhManager.Stakes(0), "看看");
     }
     //比牌按钮点击
     private void OnCopareButtonClick()
@@ -257,7 +268,7 @@ public class SelfManager_Stand : BaseManager_Stand
         if(NetMsgCenter.Instance!=null)
             NetMsgCenter.Instance.SendMsg(OpCode.Account, AccountCode.UpdateCoinCount_CREQ, -Models.GameModel.BottomStakes);
 
-
+        //准备按钮消失
         btn_Ready.gameObject.SetActive(false);
         m_ZjhManager.ChooseBanker();
 

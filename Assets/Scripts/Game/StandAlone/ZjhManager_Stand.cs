@@ -49,12 +49,16 @@ public class ZjhManager_Stand : MonoBehaviour
     }
     private void Init()
     {
+        //音乐
         m_AudioSource = GetComponent<AudioSource>();
+        
         m_SelfManager = GetComponentInChildren<SelfManager_Stand>();
         m_LeftManager = GetComponentInChildren<LeftManager_Stand>();
         m_RightManager = GetComponentInChildren<RightManager_Stand>();
 
+        //顶注
         txt_BottomStakes = transform.Find("Main/txt_BottomStakes").GetComponent<Text>();
+        //底注
         txt_TopStakes = transform.Find("Main/txt_TopStakes").GetComponent<Text>();
         btn_Back = transform.Find("Main/btn_Back").GetComponent<Button>();
         btn_Back.onClick.AddListener(() =>

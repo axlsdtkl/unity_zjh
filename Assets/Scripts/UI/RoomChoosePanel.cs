@@ -53,13 +53,30 @@ public class RoomChoosePanel : MonoBehaviour
     {
         Models.GameModel.BottomStakes = botoomStakes;
         Models.GameModel.TopStakes = topStakes;
+        switch(botoomStakes)
+        {
+            case 10:
+                Models.GameModel.RoomType = RoomType.Room_10;
+                break;
+            case 20:
+                Models.GameModel.RoomType = RoomType.Room_20;
+                break;
+            case 50:
+                Models.GameModel.RoomType = RoomType.Room_50;
+                break;
+            default:
+                break;
+        }
+
 
         switch(m_GameType)
         {
             case GameType.Net:
                 //进入联网TODO
+                SceneManager.LoadScene("4.Net");
                 break;
             case GameType.StandAlone:
+                //进入单机游戏场景
                 SceneManager.LoadScene("3.StandAlone");
                 break;
             default:

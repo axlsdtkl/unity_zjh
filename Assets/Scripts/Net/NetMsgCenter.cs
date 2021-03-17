@@ -9,10 +9,12 @@ public class NetMsgCenter : MonoBehaviour {
     private void Awake()
     {
         Instance = this;
+        //连接以后不摧毁连接体，这样进入下一个场景还能保持网络连接
         DontDestroyOnLoad(gameObject);
         client = new ClientPeer();
         client.Connect("127.0.0.1", 6666);
     }
+    //每隔一段时间检测一次
     private void FixedUpdate()
     {
         if (client == null) return;

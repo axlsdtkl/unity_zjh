@@ -5442,7 +5442,7 @@ RectTransform:
   m_GameObject: {fileID: 1161410534}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1482484818}
   - {fileID: 1455193939}
@@ -5471,15 +5471,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_LeftPlayer:
-    txt_CoinCount: {fileID: 243224400}
+    txt_CoinCount: {fileID: 286523317}
     img_Win: {fileID: 1674190392}
     img_Lose: {fileID: 920623186}
   m_SelfPlayer:
-    txt_CoinCount: {fileID: 817559416}
+    txt_CoinCount: {fileID: 2068608344}
     img_Win: {fileID: 769947660}
     img_Lose: {fileID: 806050610}
   m_RightPlayer:
-    txt_CoinCount: {fileID: 542037512}
+    txt_CoinCount: {fileID: 1959602174}
     img_Win: {fileID: 32580001}
     img_Lose: {fileID: 1639920374}
   clip_Win: {fileID: 8300000, guid: a93241659b9a4af4786b847806ecd32f, type: 3}

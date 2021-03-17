@@ -12,4 +12,23 @@
     VSWithSelf,
     Logout,
     GameOver,
+    ShowPlayerInformationPanel,//显示个人信息
+
+    //联网部分
+    RefreshUI,
+    StartGame,
+    LeftDealCard,
+    RightDealCard,
+    SelfDealCard,
+    LeftBanker,
+    RightBanker,
+    SelfBanker,
+    LeaveFightRoom,
+    StartStakes,
+    LookCardBRO,
+    PutStakesBRO,
+    GiveUpCardBRO,
+    CompareCardBRO,
+    GameOverBRO,
+    ChatBRO,
 }

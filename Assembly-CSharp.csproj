@@ -66,6 +66,14 @@
     <Compile Include="Assets\Scripts\Common\EventCenter.cs" />
     <Compile Include="Assets\Scripts\Common\EventDefine.cs" />
     <Compile Include="Assets\Scripts\Common\ResourcesManager.cs" />
+    <Compile Include="Assets\Scripts\Common\RoomType.cs" />
+    <Compile Include="Assets\Scripts\Game\Net\ChatPanel.cs" />
+    <Compile Include="Assets\Scripts\Game\Net\GameOverPanel_Net.cs" />
+    <Compile Include="Assets\Scripts\Game\Net\LeftManager_Net.cs" />
+    <Compile Include="Assets\Scripts\Game\Net\RightManager_Net.cs" />
+    <Compile Include="Assets\Scripts\Game\Net\SelfManager_Net.cs" />
+    <Compile Include="Assets\Scripts\Game\Net\VSPanel_Net.cs" />
+    <Compile Include="Assets\Scripts\Game\Net\ZjhManager_Net.cs" />
     <Compile Include="Assets\Scripts\Game\StandAlone\BaseManager_Stand.cs" />
     <Compile Include="Assets\Scripts\Game\StandAlone\GameOverPanel_Stand.cs" />
     <Compile Include="Assets\Scripts\Game\StandAlone\LeftManager_Stand.cs" />
@@ -88,6 +96,7 @@
     <Compile Include="Assets\Scripts\Net\NetMsgCenter.cs" />
     <Compile Include="Assets\Scripts\UI\Hint.cs" />
     <Compile Include="Assets\Scripts\UI\LoginPanel.cs" />
+    <Compile Include="Assets\Scripts\UI\PlayerInformation.cs" />
     <Compile Include="Assets\Scripts\UI\RankListPanel.cs" />
     <Compile Include="Assets\Scripts\UI\RechargePanel.cs" />
     <Compile Include="Assets\Scripts\UI\RegisterPanel.cs" />

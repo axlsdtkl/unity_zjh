@@ -1,4 +1,6 @@
-﻿//牌型枚举
+﻿/// <summary>
+/// 牌型枚举
+/// </summary>
 public enum CardType
 {
     Min,

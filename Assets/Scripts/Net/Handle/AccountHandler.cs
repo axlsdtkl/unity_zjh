@@ -29,6 +29,12 @@ public class AccountHandler : BaseHandler
                 Models.GameModel.userDto.CoinCount = (int)value;
                 EventCenter.Broadcast(EventDefine.UpdateCoinCount, (int)value);
                 break;
+            case AccountCode.ModifyPwd_SRES:
+                EventCenter.Broadcast(EventDefine.Hint, "密码更新成功");
+                break;
+            case AccountCode.Logout_SRES:
+                if(((int)value)==0)SceneManager.LoadScene("1.Start");
+                break;
             default:
                 break;
         }

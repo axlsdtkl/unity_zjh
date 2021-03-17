@@ -14,6 +14,7 @@ public class MainPanel : MonoBehaviour {
     private Button btn_Stand;
     private Button btn_Online;
     private Button btn_Logout;
+    private Button btn_PlayerInformation;
 
     private void Awake()
     {
@@ -32,6 +33,8 @@ public class MainPanel : MonoBehaviour {
         btn_Rank = transform.Find("btn_Rank").GetComponent<Button>();
         btn_Logout = transform.Find("btn_Logout").GetComponent<Button>();
         btn_Logout.onClick.AddListener(OnLogoutButtonClick);
+        btn_PlayerInformation=transform.Find("btn_PlayerInformation").GetComponent<Button>();
+        btn_PlayerInformation.onClick.AddListener(OnInformationButtonClick);
 
         btn_Rank.onClick.AddListener(()=>
         {
@@ -74,7 +77,12 @@ public class MainPanel : MonoBehaviour {
         //退出按钮点击
         //TODO
         //退出UI过程
-        SceneManager.LoadScene("1.Start");
-        //EventCenter.Broadcast(EventDefine.Logout);
+        NetMsgCenter.Instance.SendMsg(OpCode.Account, AccountCode.Logout_CREQ, null);
+        
+    }
+    private void OnInformationButtonClick()
+    {
+        //广播显示个人信息界面的事件码
+        EventCenter.Broadcast(EventDefine.ShowPlayerInformationPanel);
     }
 }

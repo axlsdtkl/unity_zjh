@@ -5,10 +5,14 @@ using UnityEngine;
 public class ResourcesManager
 {
     private static Dictionary<string, Sprite> nameSpriteDic = new Dictionary<string, Sprite>();
-    //获取数据
+    /// <summary>
+    /// 获取图集
+    /// </summary>
+    /// <param name="iconName"></param>
+    /// <returns></returns>
     public static Sprite GetSprite(string iconName)
     {
-        if(nameSpriteDic.ContainsKey(iconName))
+        if (nameSpriteDic.ContainsKey(iconName))
         {
             return nameSpriteDic[iconName];
         }
@@ -20,9 +24,12 @@ public class ResourcesManager
             nameSpriteDic.Add(iconName, temp);
             return temp;
         }
-
     }
-    //加载牌的图集
+    /// <summary>
+    /// 加载牌的图集
+    /// </summary>
+    /// <param name="cardName"></param>
+    /// <returns></returns>
     public static Sprite LoadCardSprite(string cardName)
     {
         if (nameSpriteDic.ContainsKey(cardName))
@@ -31,7 +38,7 @@ public class ResourcesManager
         }
         else
         {
-            Sprite temp=Resources.Load<Sprite>("Poke/"+ cardName);
+            Sprite temp = Resources.Load<Sprite>("poke/" + cardName);
             nameSpriteDic.Add(cardName, temp);
             return temp;
         }

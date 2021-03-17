@@ -96,7 +96,7 @@ public class GameOverPanel_Stand : MonoBehaviour
             m_SelfPlayer.txt_CoinCount.text = winCoin.ToString();
         }
         //右边输
-        if (leftCoinCount < 0)
+        if (rightCoinCount < 0)
         {
             m_RightPlayer.img_Lose.gameObject.SetActive(true);
             m_RightPlayer.txt_CoinCount.text = rightCoinCount.ToString();

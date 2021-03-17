@@ -14,20 +14,25 @@ public class LoginPanel : MonoBehaviour {
 
     private void Awake()
     {
+        //从注册页面过来的监听
         EventCenter.AddListener(EventDefine.ShowLoginPanel, Show);
         Init();
     }
     private void Init()
     {
+        //用户名与密码
         input_UserName = transform.Find("input_UserName").GetComponent<InputField>();
         input_Password = transform.Find("input_Password").GetComponent<InputField>();
         btn_Login = transform.Find("btn_Login").GetComponent<Button>();
+        //点击登录
         btn_Login.onClick.AddListener(OnLoginButtonClick);
         btn_Register = transform.Find("btn_Register").GetComponent<Button>();
+        //点击注册
         btn_Register.onClick.AddListener(OnRegisterButtonClick);
     }
     private void OnDestroy()
     {
+        //移除监听
         EventCenter.RemoveListener(EventDefine.ShowLoginPanel, Show);
     }
     //注册按钮点击

@@ -39,6 +39,7 @@ public class RankListPanel : MonoBehaviour {
     {
         if (dto == null) return;
 
+        //清除已经在表集中的元素
         foreach (var go in listGo)
         {
             Destroy(go);
